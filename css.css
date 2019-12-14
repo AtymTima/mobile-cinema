@@ -11,6 +11,7 @@
 	--secondary-font-color: #f56d5f;
 	--golden-font-color: #c59d5f;
 	--body-font-color: #515151;
+	--card-grey-color: rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
 *,
@@ -29,6 +30,10 @@ html body
 	font-size: 10px;
 	color: var(--body-font-color);
 	scroll-behavior: smooth;
+}
+
+html.sr .load-hidden {
+    visibility: hidden;
 }
 
 section
@@ -111,7 +116,7 @@ header
 .nav-list
 {
 	position: fixed;
-	top:0;
+	top: 0;
 	left: 0;
 	width: 80%;
 	height: 100vh;
@@ -315,6 +320,16 @@ nav::before
 	background-color: var(--golden-font-color);
 }
 
+.shadow-black
+{
+	text-shadow: rgba(0,0,0,0.8) 0px 5px 15px;
+}
+
+.shadow-white
+{
+	text-shadow: rgba(255,255,255,0.8) 0px 5px 15px;
+}
+
 /* END OF HERO */
 
 /* BEGINNING OF DISCOVERY WHY MOBILE*/
@@ -345,9 +360,362 @@ nav::before
 	margin-bottom: 3rem;
 }
 
-/*END OF DISCOVERY*/
+.mobile-main p
+{
+	margin-bottom: 2.5rem;
+}
+
+.body-btn
+{
+	font-size: 1.4rem;
+	color: var(--golden-font-color);
+	position: relative;
+	text-align: right;
+	transition: color .5s;
+}
+
+.body-btn::before
+{
+	content: '';
+	width: 100%;
+	height: 3px;
+	position: absolute;
+	background-color: var(--golden-font-color);
+	bottom: -3px;
+	transition: background-color .5s;
+}
+
+.body-btn:hover,
+.body-btn:focus
+{
+	color: var(--main-font-color-black);
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before
+{
+	background-color: var(--main-font-color-black);
+}
+/* END OF DISCOVERY */
+
+/* BETWEEN DISCOVERY AND TIPS */
+.between-main-tips
+{
+	background: url('./assets/background-iphone-dark.jpg') center no-repeat;
+	background-size: cover;
+}
+
+.between
+{
+	min-height: 50vh;
+	display: flex;
+	align-items: center;
+}
+/* BETWEEN ENDS*/
+
+/* TIPS */
+.mobile-tips
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1.2rem;
+}
+
+.mobile-main .mobile-why
+{
+	padding-top: 2rem;
+	margin-bottom: 0;
+}
+
+.tips-to-shoot-videos
+{
+	padding-top: 3rem;
+}
+/* TIPS END*/
+
+/* BETWEEN TIPS AND EDITING*/
+.between-tips-editing
+{
+	background: url('./assets/background-iphone-night-lights.jpg') center no-repeat;
+	background-size: cover;
+}
+/* BETWEEN TIPS AND EDITING ENDS*/
+
+/* BETWEEN EDITING AND BREAKDOWN */
+.between-editing-breakdown
+{
+	background: url('./assets/cinema-hall.jpg') center no-repeat;
+	background-size: cover;
+}
+/* BETWEEN EDITING AND BREAKDOWN ENDS*/
+
+/* BETWEEN BREAKDOWN AND PORTFOLIO */
+.between-breakdown-portfolio
+{
+	background: url('./assets/personal.jpg') center no-repeat;
+	background-size: cover;
+}
+/* BETWEEN BREAKDOWN AND PORTFOLIO ENDS*/
+
+/* PORTFOLIO */
+.grid-wrapper
+{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    opacity: 0.2;
+}
+
+.grid-wrapper:hover,
+.grid-wrapper:focus
+{
+	opacity: 1;
+}
+
+.box > img
+{
+    width: 100%;
+    border-radius: 1.7rem;
+}
+
+.centered
+{
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.center-text
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+	
+}
+
+.box
+{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 3.5rem;
+    background-color: var(--golden-font-color);
+    opacity: 0.6;
+    transition: opacity .5s;
+}
+
+.box:hover,
+.box:focus
+{
+	opacity: 1;
+}
+
+.zone {
+    cursor:pointer;   
+    color:#FFF;
+    font-size:2em;
+    transition: all 0.3s linear;
+}
+
+/*.zone:hover,
+.zone:focus
+{
+    -webkit-box-shadow: var(--card-grey-color);
+    -moz-box-shadow: var(--card-grey-color);
+    -o-box-shadow: var(--card-grey-color);
+    box-shadow: var(--card-grey-color);
+}*/
+
+.display span
+{
+	opacity: 0;
+	position: absolute;
+	transition: opacity .5s;
+	background-size: cover;
+	text-align: center;
+	margin-right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.display:hover span,
+.display:focus span
+{
+	opacity: 1;
+}
+/* POFRTFOLIO ENDS */
+
+/* FOOTER */
+footer
+{
+	background-color: #121212;
+	color: #fff;
+	padding: 7.9rem 0;
+	position: relative;
+	text-align: center;
+}
+
+.back-to-top
+{
+	background-color: #121212;
+	height: 7rem;
+	width: 7rem;
+	position: absolute;
+	top: -3rem;
+	left: 50%;
+	border-radius: 50%;
+	transform: translateX(-50%);
+}
+
+.back-to-top i
+{
+	display: block;
+	font-size: 2rem;
+	color: #fff;
+	padding: 2rem;
+}
+
+.footer-content
+{
+	overflow: hidden;
+}
+
+.footer-content h4
+{
+	font-size: 1.9rem;
+	letter-spacing: 3px;
+	margin-right: -3px;
+	margin-bottom: 3rem;
+	text-transform: uppercase;
+	font-weight: 100;
+}
+
+.footer-content .asterisk
+{
+	margin: 2.4rem 0;
+}
+
+.footer-content-about
+{
+	margin-bottom: 5rem;
+}
+
+.footer-content-about p
+{
+	line-height: 2;
+}
+
+.social-icons
+{
+	margin-bottom: 5rem;
+	color: var(--golden-font-color);
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.social-icons i
+{
+	font-size: 2.5rem;
+	color: #fff;
+	padding: .8rem 2rem;
+	transition: color .5s;
+}
+
+.social-icons i:hover,
+.social-icons i:focus
+{
+	color: var(--golden-font-color);
+}
+
+.newsletter-form
+{
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.newsletter-input
+{
+	width: 100%;
+	max-width: 25rem;
+	padding: 1rem;
+	border-radius: .4rem;
+}
+
+.newsletter-btn
+{
+	background-color: transparent;
+	border: none;
+	color: var(--main-font-color-black);
+	cursor: pointer;
+	font-size: 1.6rem;
+	padding: 1px .6rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 10.2rem;
+}
+/* FOOTER ENDS */
 
 /* SIZES FOR SMALLER DEVICES */
+@media only screen and (min-width: 960px)
+{
+    section
+    {
+    	padding: 7.9rem;
+    }
+
+    .menu-toggle
+    {
+    	display: none;
+    }
+
+    .nav
+    {
+    	justify-content: space-between;
+    }
+
+    .nav-list
+    {
+    	position: initial;
+    	width: initial;
+    	height: initial;
+    	background-color: transparent;
+    	padding: 0;
+    	justify-content: initial;
+    	flex-direction: row;
+    	transform: initial;
+    	transition: initial;
+    }
+
+    .nav-item
+    {
+    	margin: 0 1.6rem;
+    	border: none;
+    }
+
+    .nav-link
+    {
+    	font-size: 1.0rem;
+    }
+
+    .nav-item:last-child
+    {
+    	margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1120px)
+{
+	.nav-link
+    {
+    	font-size: 0.7rem;
+    }
+}
 
 @media only screen and (max-width: 475px)
 {
